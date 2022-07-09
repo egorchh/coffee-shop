@@ -1,4 +1,4 @@
-import HomeHeader from './home-app-header/home-app-header'
+import HomeHeader from './home-components/home-header/home-header'
 
 import './home-page.sass';
 

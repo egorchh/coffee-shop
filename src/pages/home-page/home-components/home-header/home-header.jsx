@@ -1,7 +1,7 @@
-import "./app-header.sass";
+import "./home-header.sass";
 
-import mainBg from "../../../images/main-bg.jpg"
-import beansLogo from "../../../images/beans-logo.svg"
+import mainBg from "../../../../images/main-bg.jpg"
+import beansLogo from "../../../../images/beans-logo.svg"
 
 const HomeHeader = () => {
   return (
