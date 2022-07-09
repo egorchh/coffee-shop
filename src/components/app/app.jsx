@@ -1,16 +1,19 @@
 import { Component } from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import BeansPage from '../../pages/beans-page';
-import GoodsPage from '../../pages/goods-page';
-import HomePage from '../../pages/home-page';
+import Navbar from '../app-navbar/app-navbar';
 
-import Navbar from "../app-navbar/app-navbar";
+import BeansPage from '../../pages/beans-page/beans-page';
+import GoodsPage from '../../pages/goods-page/goods-page';
+import HomePage from '../../pages/home-page/home-page';
+
+
+import './app.sass'
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className='container'>
         <BrowserRouter>
           <Navbar/>
           <Routes>

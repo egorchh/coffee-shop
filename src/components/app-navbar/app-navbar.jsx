@@ -1,24 +1,25 @@
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 
+import coffeeBeans from "../../images/coffee-beans.svg"
 
-
-import "./app-navbar.sass"
+import "./app-navbar.sass";
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Coffee house</Link>
+    <div className="navbar">
+      <img className="navbar__image" src={coffeeBeans} alt="Coffe Beans" />
+      <ul className="navbar__list">
+        <li className="navbar__item">
+          <Link className="navbar__item-link" to="/">Coffee house</Link>
         </li>
-        <li>
-          <Link to="/beans">Our coffee</Link>
+        <li className="navbar__item">
+          <Link className="navbar__item-link" to="/beans">Our coffee</Link>
         </li>
-        <li>
-          <Link to="/goods">For your pleasure</Link>
+        <li className="navbar__item">
+          <Link className="navbar__item-link" to="/goods">For your pleasure</Link>
         </li>
       </ul>
-    </nav>
+    </div>
   );
 };
 
