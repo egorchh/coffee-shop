@@ -1,22 +1,22 @@
 import {Link} from "react-router-dom";
 
-import coffeeBeans from "../../images/coffee-beans.svg"
-
 import "./app-navbar.sass";
 
-const Navbar = () => {
+const Navbar = ({linkColor, logo}) => {
+  const linkClassName = 'navbar__item-link';
+
   return (
     <div className="navbar">
-      <img className="navbar__image" src={coffeeBeans} alt="Coffe Beans" />
+      <img className="navbar__image" src={logo} alt="Coffe Beans" />
       <ul className="navbar__list">
         <li className="navbar__item">
-          <Link className="navbar__item-link" to="/">Coffee house</Link>
+          <Link className={linkClassName + linkColor} to="/">Coffee house</Link>
         </li>
         <li className="navbar__item">
-          <Link className="navbar__item-link" to="/beans">Our coffee</Link>
+          <Link className={linkClassName + linkColor} to="/beans">Our coffee</Link>
         </li>
         <li className="navbar__item">
-          <Link className="navbar__item-link" to="/goods">For your pleasure</Link>
+          <Link className={linkClassName + linkColor} to="/goods">For your pleasure</Link>
         </li>
       </ul>
     </div>
