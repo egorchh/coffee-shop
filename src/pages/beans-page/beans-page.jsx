@@ -1,7 +1,14 @@
+import Header from "../../components/app-header/app-header";
+
+import background from '../../images/second-background.png'
+
 const BeansPage = () => {
+  const title = 'Our coffee';
   return (
     <div>
-      <h1>Beans page</h1>
+      <Header 
+      title={title}
+      background={background}/>
     </div>
   );
 }
