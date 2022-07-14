@@ -1,9 +1,9 @@
+
 import GoodsItem from '../goods-item/goods-item';
 
 import './goods-list.sass';
 
 const GoodsList = ({data}) => {
-
   const elements = data.map(item => {
     const {id} = item;
     return (

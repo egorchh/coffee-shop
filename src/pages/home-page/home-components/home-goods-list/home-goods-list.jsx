@@ -1,4 +1,4 @@
-import GoodsItem from "../home-goods-item/goods-item";
+import GoodsItem from "../home-goods-item/home-goods-item";
 
 const GoodsList = ({data}) => {
 

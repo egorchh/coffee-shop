@@ -9,21 +9,21 @@ import descriptionImage from '../../images/goods/aromistico.jpg'
 import './goods-item-page.sass'
 
 const GoodsItemPage = ({data}) => {
-    const headerTitle = 'Our coffee';
-    const descriptionTitle = 'About it'
-
-    return (
-      <>
-        <Header
+  const headerTitle = 'Our coffee';
+  const descriptionTitle = 'About it';
+  
+  return (
+    <>
+      <Header
         title={headerTitle}
         background={background}/>
-        {/* <ItemDescription
-          title={descriptionTitle}
-          logo={beansLogoBlack}
-          image={descriptionImage}
-          variety={data.variety}/> */}
-      </>
-    );
+      <ItemDescription
+        data={data}
+        title={descriptionTitle}
+        logo={beansLogoBlack}
+        image={descriptionImage}/>
+    </>
+  );
 }
 
 export default GoodsItemPage;

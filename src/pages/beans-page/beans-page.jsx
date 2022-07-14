@@ -9,7 +9,6 @@ import GoodsList from "../../components/goods-list/goods-list";
 import background from '../../images/second-background.png'
 import descriptionImage from '../../images/goods-description-image.png';
 import beansLogoBlack from '../../images/beans-logo-black.svg'
-import goodImage from '../../images/goods/good-image.png'
 
 import './beans-page.sass'
 
@@ -18,22 +17,49 @@ class BeansPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        {image: goodImage, description: 'AROMISTICO Coffee 1 kg', price: 6.99, variety: "Brasil", id: 1},
-        {image: goodImage, description: 'AROMISTICO Coffee 1 kg', price: 6.99, variety: "Kenya", id: 2},
-        {image: goodImage, description: 'AROMISTICO Coffee 1 kg', price: 6.99, variety: "Brasil", id: 3},
-        {image: goodImage, description: 'AROMISTICO Coffee 1 kg', price: 6.99, variety: "Kenya", id: 4},
-        {image: goodImage, description: 'AROMISTICO Coffee 1 kg', price: 6.99, variety: "Columbia", id: 5},
-        {image: goodImage, description: 'AROMISTICO Coffee 1 kg', price: 6.99, variety: "Brasil", id: 6},
-      ]
+      term: '',
+      filter: '',
     }
+  }
+
+  searchGood = (items, term) => {
+    if (term.length === 0) {
+      return items;
+    }
+
+    return items.filter(item => {
+      return item.description.indexOf(term) > -1
+    })
+  }
+
+  onUpdateSearch = (term) => {
+    this.setState({term})
+  }
+
+  filterPost = (items, filter) => {
+    switch (filter) {
+      case "Brasil":
+        return items.filter(item => item.variety === "Brasil");
+      case "Kenya":
+        return items.filter(item => item.variety === "Kenya");
+      case "Columbia":
+        return items.filter(item => item.variety === "Columbia");
+      default:
+        return items;
+    }
+  }
+
+  onUpdateFilter = (filter) => {
+    this.setState({filter})
   }
 
   render() {
     const headerTitle = 'Our coffee';
     const descriptionTitle = 'About our beans';
 
-    const {data} = this.state;
+    const {data} = this.props;
+    const {term, filter} = this.state;
+    const visibleData = this.filterPost(this.searchGood(data, term), filter);
 
     return (
       <div className="beans-page__wrapper">
@@ -45,11 +71,12 @@ class BeansPage extends Component {
         title={descriptionTitle}
         logo={beansLogoBlack}/>
         <div className="finder">
-          <Search/>
-          <Filter/>
+          <Search onUpdateSearch={this.onUpdateSearch}/>
+          <Filter filter={filter} onUpdateFilter={this.onUpdateFilter}/>
         </div>
         <GoodsList 
-        data={data}/>
+        data={visibleData}
+        />
       </div>
     );
   }
