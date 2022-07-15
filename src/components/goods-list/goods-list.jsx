@@ -3,7 +3,7 @@ import GoodsItem from '../goods-item/goods-item';
 
 import './goods-list.sass';
 
-const GoodsList = ({data}) => {
+const GoodsList = ({data, changeCurData}) => {
   const elements = data.map(item => {
     const {id} = item;
     return (
@@ -12,7 +12,8 @@ const GoodsList = ({data}) => {
         image={item.image}
         description={item.description}
         price={item.price}
-        variety={item.variety}/>
+        variety={item.variety}
+        changeCurData={() => changeCurData(id)}/>
     );
   });
 

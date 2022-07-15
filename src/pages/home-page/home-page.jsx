@@ -7,12 +7,14 @@ import OurBest from './home-components/home-our-best/home-our-best';
 
 class HomePage extends Component {
   render() {
-    const {data} = this.props
+    const {data, changeCurData} = this.props
     return (
       <div>
         <HomeHeader/>
         <HomeDescription/>
-        <OurBest data={data}/>
+        <OurBest 
+        data={data}
+        changeCurData={changeCurData}/>
       </div>
     );
   }

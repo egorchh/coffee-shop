@@ -17,7 +17,7 @@ class GoodsPage extends Component {
     const title = 'For your pleasure';
     const descriptionTitle = 'About our goods';
 
-    const {data} = this.props;
+    const {data, changeCurData} = this.props;
 
     return (
     <div className="goods-page__wrapper">
@@ -29,7 +29,8 @@ class GoodsPage extends Component {
       title={descriptionTitle}
       logo={beansLogoBlack}/>
       <GoodsList
-      data={data}/>
+      data={data}
+      changeCurData={changeCurData}/>
     </div>
   );
   }

@@ -1,6 +1,6 @@
 import GoodsItem from "../home-goods-item/home-goods-item";
 
-const GoodsList = ({data}) => {
+const GoodsList = ({data, changeCurData}) => {
 
   const elements = data.map(item => {
     const {id} = item;
@@ -9,7 +9,8 @@ const GoodsList = ({data}) => {
       key={id}
       image={item.image}
       description={item.description}
-      price={item.price}/>
+      price={item.price}
+      changeCurData={() => changeCurData(id)}/>
     );
   })
   

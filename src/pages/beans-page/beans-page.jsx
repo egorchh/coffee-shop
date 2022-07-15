@@ -57,7 +57,7 @@ class BeansPage extends Component {
     const headerTitle = 'Our coffee';
     const descriptionTitle = 'About our beans';
 
-    const {data} = this.props;
+    const {data, changeCurData} = this.props;
     const {term, filter} = this.state;
     const visibleData = this.filterPost(this.searchGood(data, term), filter);
 
@@ -76,7 +76,7 @@ class BeansPage extends Component {
         </div>
         <GoodsList 
         data={visibleData}
-        />
+        changeCurData={changeCurData}/>
       </div>
     );
   }

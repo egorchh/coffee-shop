@@ -5,7 +5,7 @@ const Filter = (props) => {
     {name: 'Columbia', label: 'Columbia'},
     {name: 'Kenya', label: 'Kenya'},
     {name: 'Brasil', label: 'Brasil'},
-    // {name: 'all', label: 'All'},
+    {name: 'all', label: 'All'},
   ]
 
   const buttons = buttonsData.map(({name, label}) => {

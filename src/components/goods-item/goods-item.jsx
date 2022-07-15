@@ -2,11 +2,11 @@ import {Link} from "react-router-dom";
 
 import './goods-item.sass';
 
-const GoodsItem = ({image, description, price, variety}) => {
+const GoodsItem = ({image, description, price, variety, changeCurData}) => {
   return(
     <li className="goods__item">
       <Link className="goods__link" to='/goods-item'>
-        <div className="card">
+        <div className="card" onClick={changeCurData}>
           <div className="card-wrapper">
             <img className="card__image" src={image} alt="Solimo coffee beans" />
             <span className="card__title">{description}</span>

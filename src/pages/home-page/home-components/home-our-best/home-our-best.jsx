@@ -4,7 +4,7 @@ import paperBg from '../../../../images/paper-background.jpg';
 
 import GoodsList from '../home-goods-list/home-goods-list';
 
-const OurBest = ({data}) => {
+const OurBest = ({data, changeCurData}) => {
 
   const visibleData = [];
 
@@ -16,7 +16,9 @@ const OurBest = ({data}) => {
     <section className="home-best">
       <img className="home-best__background" src={paperBg} alt="Paper background" />
       <h3 className="home-best__title">Our best</h3>
-      <GoodsList data={visibleData}/>
+      <GoodsList 
+      data={visibleData}
+      changeCurData={changeCurData}/>
     </section>
   );
 }
